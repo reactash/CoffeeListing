@@ -8,9 +8,21 @@ const Hero = () => {
 
   useEffect(()=>{
 
+const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json"
+        );
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.log("API error:", error);
+      }
+    };
+    fetchData();
   },[]);
 
-
+     
   return (
     <>
     <div className='header'>
@@ -24,12 +36,17 @@ const Hero = () => {
            <label>Introducing our Coffee Collection, a selection of unique coffees from different roast types and origins, expertly roasted in small batches and shipped fresh weekly.</label>
            <p><span className='product-btn'> All Products </span>   <span className='available-btn'> Available Now</span></p>      
           <div className='cards'>
-             <Card/>  
-             <Card/>
-             <Card/>
-             <Card/>
-             <Card/>
-             <Card/>
+            { 
+            products?
+             products.map((product)=>{
+                // console.log( product.id);
+              return  <Card props={product} key={product.id}/> 
+              })
+
+             :''
+
+            }
+           
           </div>    
     </div>
 

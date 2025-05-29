@@ -1,12 +1,18 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({props}) => {
   return (
     <div className='card'>
-      <img src="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/house-coffee.jpg"/>
+      <div className='img-wrapper'>    
+        <img src={props.image}/>
+      {props.popular ? <p className='popular'>Popular</p>:''}
+      </div>
+  
       <div className='card-details'>
-        <p className='title'><span className='name'>House Coffee</span> <span className='price'>$3.50</span></p>
-        <p> ⭐4.85 <span className='review'>(320 votes)</span></p>
+        <p className='title'><span className='name'>{props.name}</span> <span className='price'>{props.price}</span></p>
+       { props.rating ? <p className='rating'> <span> ⭐{props.rating} <span className='review'>({props.votes} votes)</span> </span> {!props.available ? <span className='sold-out'>Sold out</span>:'' } </p>:
+          <p className='no-rating'><span> ☆ <span className='review'>No ratings </span></span> {!props.available? <span className='sold-out'>Sold out</span>:'' } </p>
+       }
       </div>
     </div>
   )
