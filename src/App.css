@@ -3,6 +3,7 @@ Body{
   padding: 0;
   background-color: #111315;
   font-family: 'DM Sans', sans-serif;
+ 
   
 }
 .header{
@@ -34,26 +35,35 @@ align-items: center;
   
 }
 
+.child-hero>h1{
+   font-weight: bold;
+}
+
 .child-hero>label{
 color: #6F757C;
 width: 500px;
 text-align: center;
+ font-weight:500;
 }
 
 .child-hero>p{
   width: 16rem;
  display: flex;
  justify-content: space-between;
+  font-weight: 500;
+
 }
 
 .product-btn{
   background-color: #4D5562;
   border-radius: 4px 4px;
-  padding: 2.5px 5px;
+  padding: 7px 10px;
+    font-size: 90%;
 }
 
 .available-btn{
-  padding: 2.5px 5px;
+  padding: 7px 10px;
+   font-size: 90%;
 }
 
 .card{
@@ -61,13 +71,36 @@ text-align: center;
   margin: 15px 1.5rem;
 }
 
-.card>img{
-  border-radius: 10px 10px ;
+.img-wrapper {
+  position: relative;
+  width: 100%;
+ 
+}
+
+.img-wrapper>img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.popular {
+  position: absolute;
+  top: 1px;
+  margin-top: 5px;
+  left: 5px;
+  background-color: #F6C768;
+  color: #111315;
+  font-weight: 600;
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 30px;
+
 }
 
 .title{
   display: flex;
   justify-content: space-between;
+  font-weight: 500;
 }
 
 .name{
@@ -76,16 +109,39 @@ text-align: center;
 
 .price{
   background-color: #BEE3CC;
-  padding: 4px;
+  padding: 5px 10px;
   color: #111315;
   border-radius: 5px 5px;
+  font-weight: bold;
+  font-size: 80%;
+ 
 }
 .review{
   color: #4D5562;
+   font-size: 90%;
+     font-weight: bold;
 }
 .cards{
   display: flex;
   flex-wrap: wrap;
   padding: 4px 5rem;
   justify-content: center;
+}
+
+.rating{
+ display: flex;
+justify-content: space-between;
+}
+.no-rating{
+  color: #4D5562;
+  font-weight: bold;
+  font-size: 100%;
+   display: flex;
+justify-content: space-between;
+}
+
+.sold-out{
+  color:#ED735D;
+    font-weight: 500;
+  font-size: 90%;
 }
